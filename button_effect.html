@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button effect</title>
+</head>
+<style>
+  .setting-r-email .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    margin-bottom: 30px;
+  }
+  .setting-r-email .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .setting-r-email .slider {
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333050;
+    border-radius: 20px;
+  }
+  .setting-r-email .slider, .setting-r-email .slider:before {
+    position: absolute;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+  }
+  .setting-r-email .slider:before {
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: -4px;
+    bottom: -4px;
+    background-color: #605c87;
+    border-radius: 50%
+  }
+  .setting-r-email input:checked+.slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+    background-color: #fd4e79;
+  }
+
+  /* ==============checkbox ================*/
+
+  .confirm .checkbox-nomal {
+    color: #111;
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .confirm .checkbox-nomal input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+  }
+
+  .confirm .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+
+  .confirm .checkbox-nomal input:checked~.checkmark {
+    background-color: rgba(0,0,0,0);
+    border-color: red;
+  }
+  .confirm .checkbox-nomal .checkmark:after {
+    left: 6px;
+    top: -5px;
+    width: 6px;
+    height: 14px;
+    border: solid #fd4e79;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .confirm .checkbox-nomal input:checked~.checkmark:after {
+    display: block;
+  }
+
+</style>
+<body>
+<div class="setting-r-email">
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+</div>
+<div class="confirm">
+  <label class="checkbox-nomal">
+    인증 완료
+    <input type="checkbox" checked="checked" disabled="disabled"> <span class="checkmark"></span></label>
+</div>
+
+</body>
+</html>
